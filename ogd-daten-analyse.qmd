@@ -1,0 +1,33 @@
+---
+title: "ogd-daten-analyse.qmd"
+format: html
+editor: visual
+author: Jana Kobler
+---
+
+## R Pakete laden
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+```{r}
+daten <- read_csv(here::here("daten/KTZH_00002423_00004863 (1).csv"))
+
+glimpse(daten)
+head(daten)
+str(daten)
+summary(daten)
+names(daten)
+colnames(daten)
+```
+
+```{r}
+daten <- subset(daten, select = -ID)
+
+daten2 <- pivot_wider(daten,
+          
+```
