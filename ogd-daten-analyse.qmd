@@ -23,11 +23,22 @@ str(daten)
 summary(daten)
 names(daten)
 colnames(daten)
+
+
 ```
 
 ```{r}
-daten <- subset(daten, select = -ID)
+cols_to_keep <- sapply(daten, function(x) !any(x == "Nein"))
+daten <- daten[, cols_to_keep]
+daten<-select(daten, -ID)
+daten_t <- as.data.frame(t(daten))
+daten_t <- rownames_to_column(daten_t, var = "Variable")
+column_names_row <- c("Variable", colnames(daten))
+colnames(daten_t) <- daten_t[1,]
+daten_t <- daten_t[-1, ]
+rownames(daten_t) <- NULL
+daten_t <- daten_t |> 
+  rename(Werte = Indikator)
 
-daten2 <- pivot_wider(daten,
-          
+
 ```
