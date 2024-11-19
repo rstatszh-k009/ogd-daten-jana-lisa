@@ -12,6 +12,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(tidyverse)
+devtools::install_github("statistikZH/statR")
 ```
 
 ```{r}
@@ -39,6 +40,15 @@ daten_t <- daten_t[-1, ]
 rownames(daten_t) <- NULL
 daten_t <- daten_t |> 
   rename(Werte = Indikator)
+```
 
+```{r}
+ggplot(daten_t, aes(x=V1, y=Variable))+
+  geom_point()
 
+ggplot(daten_t, aes(x=V1, y=Variable))+
+  geom_boxplot()
+
+ggplot(daten_t, aes(x=Variable, y=V1))+
+  geom_point()
 ```
