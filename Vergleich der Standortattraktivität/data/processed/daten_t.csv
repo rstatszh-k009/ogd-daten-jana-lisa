@@ -1,0 +1,361 @@
+ID,Indikator,Zuercher_Daten,Minimalwert,Maximalwert,Messjahr,Stadt,Indexwert,zuerich_binary
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Zuerich,57.84353153,TRUE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Median_aller_Regionen,50.25422152,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Muenchen,42.38388047,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Dublin,52.38021619,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Amsterdam,46.91195687,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,London,38.28370102,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Stockholm,28.7506669,FALSE
+H&A.1,Anteil der Bevölkerung zwischen 15 und 64 Jahren,Nein,28.7506669,52.38021619,2021,Median_der_5_Vergleichsregionen,42.38388047,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Zuerich,100,TRUE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Median_aller_Regionen,38.26438544,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Muenchen,88.14268927,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Dublin,90.39496485,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Amsterdam,100,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,London,100,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Stockholm,100,FALSE
+H&A.2,Anteil ICT-Fachkräfte an Gesamtbeschäftigung,Ja,88.14268927,100,2021,Median_der_5_Vergleichsregionen,100,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Zuerich,100,TRUE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Median_aller_Regionen,31.99806913,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Muenchen,29.71233114,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Dublin,52.94947316,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Amsterdam,76.18623805,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,London,58.66325245,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Stockholm,100,FALSE
+H&A.3,Anteil Bevölkerung beteiligt an lebenslangem Lernen,Ja,29.71233114,100,2021,Median_der_5_Vergleichsregionen,58.66325245,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Zuerich,100,TRUE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Median_aller_Regionen,62.5,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Muenchen,85,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Dublin,76.66666667,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Amsterdam,86.66666667,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,London,55,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Stockholm,98.33333333,FALSE
+H&A.4,Attraktivität für internationale Talente,Nein,55,98.33333333,2022,Median_der_5_Vergleichsregionen,85,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Zuerich,93.50348028,TRUE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Median_aller_Regionen,66.82134571,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Muenchen,88.63109049,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Dublin,69.60556845,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Amsterdam,90.25522042,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,London,78.88714777,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Stockholm,86.31090487,FALSE
+H&A.5,Erwerbstätigenquote,Ja,69.60556845,90.25522042,2021,Median_der_5_Vergleichsregionen,86.31090487,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Zuerich,8.928571429,TRUE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Median_aller_Regionen,21.42857143,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Muenchen,10.71428571,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Dublin,17.85714286,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Amsterdam,26.78571429,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,London,19.64285714,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Stockholm,21.42857143,FALSE
+H&A.6,Rekrutierungsschwierigkeiten,Nein,10.71428571,26.78571429,2021,Median_der_5_Vergleichsregionen,19.64285714,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Zuerich,100,TRUE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Median_aller_Regionen,4.682166464,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Muenchen,15.66850668,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Dublin,44.35519387,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Amsterdam,49.66968835,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,London,54.79862989,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Stockholm,66.55062241,FALSE
+B.1,Anteil Top-Universitäten pro Einwohner,Nein,15.66850668,66.55062241,2023,Median_der_5_Vergleichsregionen,49.66968835,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Zuerich,100,TRUE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Median_aller_Regionen,37.42760779,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Muenchen,44.35519387,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Dublin,65.23776245,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Amsterdam,37.42760779,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,London,100,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Stockholm,65.23776245,FALSE
+B.2,Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen,Nein,37.42760779,100,2021,Median_der_5_Vergleichsregionen,65.23776245,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Zuerich,100,TRUE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Median_aller_Regionen,53.70836976,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Muenchen,49.66968835,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Dublin,63.33339047,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Amsterdam,94.12534353,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,London,94.71440896,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Stockholm,82.15034595,FALSE
+B.3,Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen,Ja,49.66968835,94.71440896,2021,Median_der_5_Vergleichsregionen,82.15034595,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Zuerich,54.97050287,TRUE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Median_aller_Regionen,30.42173567,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Muenchen,66.55062241,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Dublin,46.99606006,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Amsterdam,53.76468308,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,London,54.97050287,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Stockholm,54.97050287,FALSE
+B.4,Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung,Ja,46.99606006,66.55062241,2021,Median_der_5_Vergleichsregionen,53.76468308,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Zuerich,90.0621118,TRUE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Median_aller_Regionen,17.39130435,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Muenchen,54.79862989,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Dublin,91.09730849,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Amsterdam,76.19047619,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,London,71.22153209,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Stockholm,90.68322981,FALSE
+B.5,Anteil Bevölkerung mit Tertiärabschluss,Ja,54.79862989,91.09730849,2021,Median_der_5_Vergleichsregionen,83.436853,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Zuerich,49.29971989,TRUE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Median_aller_Regionen,36.41456583,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Muenchen,50.70028011,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Dublin,100,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Amsterdam,26.8907563,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,London,61.62464986,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Stockholm,36.41456583,FALSE
+B.6,MINT Abschlüsse pro Einwohner,Nein,26.8907563,100,2020,Median_der_5_Vergleichsregionen,50.70028011,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Zuerich,90.48582996,TRUE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Median_aller_Regionen,71.15384615,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Muenchen,95.1417004,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Dublin,85.22267206,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Amsterdam,89.06882591,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,London,77.32793522,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Stockholm,62.55060729,FALSE
+B.7,Jugendarbeitslosigkeit,Ja,62.55060729,95.1417004,2022,Median_der_5_Vergleichsregionen,85.22267206,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Zuerich,86.03603604,TRUE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Median_aller_Regionen,25.67567568,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Muenchen,58.10810811,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Dublin,37.38738739,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Amsterdam,22.52252252,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,London,NA,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Stockholm,18.01801802,FALSE
+B.8,Berufsweltmeisterschaft,Nein,18.01801802,58.10810811,2022,Median_der_5_Vergleichsregionen,29.95495495,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Zuerich,62.87016281,TRUE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Median_aller_Regionen,33.85312685,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Muenchen,73.92415495,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Dublin,18.65370371,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Amsterdam,48.36189009,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,London,34.54427728,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Stockholm,66.32444338,FALSE
+F&I.1,Anteil Öffentliche F&E Ausgaben am BIP,Ja,18.65370371,73.92415495,2021,Median_der_5_Vergleichsregionen,48.36189009,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Zuerich,81.08417211,TRUE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Median_aller_Regionen,28.34366898,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Muenchen,100,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Dublin,30.4961566,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Amsterdam,43.41244925,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,London,20.45045497,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Stockholm,97.58779224,FALSE
+F&I.2,Anteil Private F&E Ausgaben am BIP,Ja,20.45045497,100,2021,Median_der_5_Vergleichsregionen,43.41244925,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Zuerich,72.1339606,TRUE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Median_aller_Regionen,63.79568475,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Muenchen,62.42492644,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Dublin,65.16644305,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Amsterdam,94.15304354,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,London,100,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Stockholm,94.1708942,FALSE
+F&I.3,Anteil Venture Capital Ausgaben am BIP,Nein,62.42492644,100,2022,Median_der_5_Vergleichsregionen,94.15304354,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Zuerich,73.23085066,TRUE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Median_aller_Regionen,57.39794005,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Muenchen,92.47744867,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Dublin,52.60448601,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Amsterdam,52.93707682,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,London,39.86017071,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Stockholm,93.02176838,FALSE
+F&I.4,Produktinnovationen durch KMU,Ja,39.86017071,93.02176838,2021,Median_der_5_Vergleichsregionen,52.93707682,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Zuerich,77.33190832,TRUE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Median_aller_Regionen,51.98404315,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Muenchen,81.81614823,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Dublin,47.68000133,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Amsterdam,51.36018492,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,London,12.72861339,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Stockholm,71.84021607,FALSE
+F&I.5,Geschäftsprozessinnovationen durch KMU,Ja,12.72861339,81.81614823,2021,Median_der_5_Vergleichsregionen,51.36018492,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Zuerich,37.46776968,TRUE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Median_aller_Regionen,43.3643362,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Muenchen,65.98361542,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Dublin,72.39509512,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Amsterdam,50.82988257,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,London,70.27831559,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Stockholm,57.18083874,FALSE
+F&I.6,KMU mit Kooperationsaktivitäten im Bereich Innovation,Ja,50.82988257,72.39509512,2021,Median_der_5_Vergleichsregionen,65.98361542,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Zuerich,87.43329157,TRUE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Median_aller_Regionen,42.28701365,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Muenchen,100,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Dublin,40.07875738,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Amsterdam,45.15555909,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,London,46.74926911,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Stockholm,100,FALSE
+F&I.7,Patentanmeldungen im Verhältnis zum BIP,Ja,40.07875738,100,2021,Median_der_5_Vergleichsregionen,46.74926911,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Zuerich,56.96142457,TRUE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Median_aller_Regionen,32.05487243,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Muenchen,75.31172168,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Dublin,41.13314114,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Amsterdam,72.13429821,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,London,63.81047636,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Stockholm,95.64629052,FALSE
+F&I.8,Trademark Anmeldungen im Verhältnis zum BIP,Ja,41.13314114,95.64629052,2021,Median_der_5_Vergleichsregionen,72.13429821,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Zuerich,27.57310861,TRUE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Median_aller_Regionen,40.96849255,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Muenchen,79.99119552,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Dublin,43.78026539,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Amsterdam,48.90447142,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,London,54.17206465,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Stockholm,56.45368216,FALSE
+F&I.9,Designeintragungen im Verhältnis zum BIP,Ja,43.78026539,79.99119552,2021,Median_der_5_Vergleichsregionen,54.17206465,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Zuerich,100,TRUE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Median_aller_Regionen,67.59,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Muenchen,75.49,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Dublin,75.1,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Amsterdam,90.5,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,London,75.41,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Stockholm,79.87,FALSE
+S&R.1,Rechtsstaatlichkeit,Nein,75.09543605,90.49737258,2022,Median_der_5_Vergleichsregionen,75.49,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Zuerich,52.76,TRUE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Median_aller_Regionen,45.6,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Muenchen,65.93,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Dublin,75.01,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Amsterdam,67.95,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,London,82.62,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Stockholm,30.3,FALSE
+S&R.2,Arbeitsmarktregulierung,Nein,30.30294961,82.62321165,2022,Median_der_5_Vergleichsregionen,67.95,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Zuerich,80.21,TRUE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Median_aller_Regionen,58.3,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Muenchen,65.59,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Dublin,65.43,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Amsterdam,62.81,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,London,73.83,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Stockholm,67.16,FALSE
+S&R.3,Unternehmensregulierung,Nein,62.81218091,73.82612364,2022,Median_der_5_Vergleichsregionen,65.59,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Zuerich,48.89,TRUE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Median_aller_Regionen,40.12,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Muenchen,19.61,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Dublin,39.35,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Amsterdam,20.65,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,London,0,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Stockholm,21.75,FALSE
+S&R.4,Produktmarktregulierung,Nein,0,39.35030491,2018,Median_der_5_Vergleichsregionen,20.65,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Zuerich,73.97,TRUE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Median_aller_Regionen,80.14,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Muenchen,79.45,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Dublin,71.23,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Amsterdam,91.78,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,London,89.04,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Stockholm,80.82,FALSE
+S&R.5,Zeit für Unternehmensgründung,Nein,71.23287671,91.78082192,2019,Median_der_5_Vergleichsregionen,80.82,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Zuerich,70.76,TRUE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Median_aller_Regionen,70.76,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Muenchen,17.37,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Dublin,83.05,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Amsterdam,48.73,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,London,58.05,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Stockholm,64.41,FALSE
+S&R.6,BAK Taxation Index für Unternehmen,Ja,17.37288136,83.05084746,2021,Median_der_5_Vergleichsregionen,58.05,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Zuerich,62.22,TRUE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Median_aller_Regionen,54.55,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Muenchen,40.2,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Dublin,19.19,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Amsterdam,32.73,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,London,29.7,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Stockholm,12.12,FALSE
+S&R.7,BAK Taxation Index für hochqualifizierte Arbeitnehmende,Ja,12.12121212,40.2020202,2021,Median_der_5_Vergleichsregionen,29.7,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Zuerich,82.9,TRUE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Median_aller_Regionen,33.85,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Muenchen,70.2,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Dublin,55.6,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Amsterdam,71.3,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,London,62.9,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Stockholm,74.2,FALSE
+S&R.8,Wettbewerbsfähigkeit der Unternehmensbesteuerung,Nein,55.6,74.2,2022,Median_der_5_Vergleichsregionen,70.2,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Zuerich,66.47398844,TRUE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Median_aller_Regionen,75.52986513,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Muenchen,32.56262042,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Dublin,NA,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Amsterdam,52.7938343,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,London,35.26011561,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Stockholm,NA,FALSE
+K.1,Elektrizitätspreise für Unternehmen,Nein,32.56262042,52.7938343,2023,Median_der_5_Vergleichsregionen,35.26011561,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Zuerich,0,TRUE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Median_aller_Regionen,45.63034585,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Muenchen,19.78430643,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Dublin,31.64745258,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Amsterdam,19.15210115,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,London,45.63034585,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Stockholm,27.22201562,FALSE
+K.2,Arbeitskosten,Nein,19.15210115,45.63034585,2016,Median_der_5_Vergleichsregionen,27.22201562,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Zuerich,82.367203,TRUE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Median_aller_Regionen,56.66189112,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Muenchen,44.96638748,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Dublin,69.55587393,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Amsterdam,66.59035706,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,London,69.6218812,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Stockholm,13.43406436,FALSE
+K.3,Kosten für Sozialabgaben,Nein,13.43406436,69.6218812,2021,Median_der_5_Vergleichsregionen,66.59035706,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Zuerich,56.67647683,TRUE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Median_aller_Regionen,30.96959368,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Muenchen,8.605946252,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Dublin,35.46506328,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Amsterdam,32.8659922,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,London,40.61039994,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Stockholm,19.10693326,FALSE
+K.4,Durchschnittliche Steuerbelastung,Nein,8.605946252,40.61039994,2021,Median_der_5_Vergleichsregionen,32.8659922,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Zuerich,86.3,TRUE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Median_aller_Regionen,60.7,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Muenchen,83.7,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Dublin,62.9,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Amsterdam,100,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,London,91,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Stockholm,57.6,FALSE
+I.1,BAK Erreichbarkeitsindex (kontinental),Ja,57.60490177,100,2023,Median_der_5_Vergleichsregionen,83.7,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Zuerich,93.4,TRUE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Median_aller_Regionen,85.3,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Muenchen,93.2,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Dublin,91,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Amsterdam,99.9,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,London,99.9,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Stockholm,86.7,FALSE
+I.2,BAK Erreichbarkeitsindex (global),Ja,86.73909225,99.90120179,2023,Median_der_5_Vergleichsregionen,93.2,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Zuerich,100,TRUE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Median_aller_Regionen,57,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Muenchen,83.2,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Dublin,44.8,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Amsterdam,83.1,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,London,73.9,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Stockholm,72.7,FALSE
+I.3,Breitbandpenetration pro Einwohner,Nein,44.75743182,83.20518929,2022,Median_der_5_Vergleichsregionen,73.9,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Zuerich,51.4,TRUE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Median_aller_Regionen,69.5,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Muenchen,67.4,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Dublin,81.9,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Amsterdam,90.5,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,London,73.6,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Stockholm,80.6,FALSE
+I.4,E-Government-Reifegrad,Nein,67.41650864,90.46768885,2020,Median_der_5_Vergleichsregionen,80.6,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Zuerich,87.9,TRUE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Median_aller_Regionen,83.06,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Muenchen,96.37,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Dublin,81.45,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Amsterdam,89.11,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,London,84.68,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Stockholm,74.19,FALSE
+W.1,Erwerbslosenquote,Ja,74.19354839,96.37096774,2021,Median_der_5_Vergleichsregionen,86.29,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Zuerich,56.18,TRUE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Median_aller_Regionen,29.2,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Muenchen,36.89,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Dublin,88.8,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Amsterdam,41.32,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,London,29.75,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Stockholm,39.34,FALSE
+W.2,BIP pro Kopf (KKP),Nein,29.75175836,88.79551937,2021,Median_der_5_Vergleichsregionen,39.34,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Zuerich,54.07,TRUE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Median_aller_Regionen,34.07,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Muenchen,47.39,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Dublin,100,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Amsterdam,46.86,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,London,39.35,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Stockholm,52.1,FALSE
+W.3,Arbeitsproduktivität,Nein,39.3457987,100,2021,Median_der_5_Vergleichsregionen,47.39,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Zuerich,100,TRUE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Median_aller_Regionen,2.45,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Muenchen,23.08,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Dublin,38.32,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Amsterdam,36.51,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,London,14.26,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Stockholm,6.15,FALSE
+W.4,Fortune 500-Unternehmen pro Kopf,Ja,6.145118595,38.31601968,2023,Median_der_5_Vergleichsregionen,23.08,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Zuerich,100,TRUE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Median_aller_Regionen,29.20193519,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Muenchen,71.44916756,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Dublin,87.46526884,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Amsterdam,71.50145601,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,London,81.6619644,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Stockholm,95.07712146,FALSE
+W.5,CO?-Emissionen pro US-Dollar des BIP,Nein,71.44916756,95.07712146,2018,Median_der_5_Vergleichsregionen,81.6619644,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Zuerich,87.41634485,TRUE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Median_aller_Regionen,75.70824122,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Muenchen,69.49982343,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Dublin,75.23078194,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Amsterdam,89.50479853,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,London,76.18570051,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Stockholm,94.45266192,FALSE
+W.6,Einkommensungleichheit (Gini-Koeffizient),Nein,69.49982343,94.45266192,2019,Median_der_5_Vergleichsregionen,76.18570051,FALSE

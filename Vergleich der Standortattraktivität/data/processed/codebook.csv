@@ -1,0 +1,10 @@
+﻿variable_name;beschreibung
+ID;Kategorien der Indikatoren
+Indikator;Name des Indikators
+Zuercher_Daten;Binäre Variable, ob die Werte durch den Kanton ZH erhoben wurden
+Minimalwert;Minimalwert des Indikatorwerts
+Maximalwert;Maximalwert des Indikatorwerts
+Messjahr;Jahr, in dem die Messung des Werts vorgenommen wurde
+Stadt;Zentrumsstadt der betrachteten Region
+Indexwert;Indexwert
+zurich_binary;??

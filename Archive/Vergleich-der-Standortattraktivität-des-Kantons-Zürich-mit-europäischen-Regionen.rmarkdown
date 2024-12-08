@@ -1,0 +1,344 @@
+---
+title: "ogd-daten-analyse.qmd"
+format: html
+editor: visual
+author: Jana Kobler
+toc: true
+date: 2024-12-10
+---
+
+
+
+# Einleitung
+
+Für das Abschlussprojekt des Kurses Rstats-K009 konnten aus Gründen des Datenschutzes und der Verfügbarkeit kein Datensatz aus dem Arbeitsalltag der Autorin verwendet werden. Stattdessen wurde der Datensatz Vergleich der Standortattraktivität des Kantons Zürich mit europäschen Regionen aus dem öffentlich zugänaglichen Datenkatalog (open government data) des statistischen Amts des Kantons Zürich verwendet. Die Daten stammen vom Amt für Wirtschaft des Kantons Zürich und wurden am 18.12.2024 publiziert.
+
+Die Indikatoren in diesem Datensatz vergleichen die Attraktivität des Wirtschaftsstandorts Kanton Zürich mit der von München, Stockholm, Amsterdam, Dublin und London. Sie bilden Grundlage der "Vergleichsanalyse Standortattraktivität". Die Indikatoren bilden verschiedene Standortfaktoren ab, die einzelnen Werte bildet die Fachstelle Volkswirtschaft des Amts für Wirtschaft auf Basis von Daten der OECD, der EU und verschiedener think tanks.
+
+Die Vergleichsregionen umfassen jeweils die entsprechende NUTS-2 Region. Entsprechend werden folgende Regionen verglichen: Oberbayern (Muenchen), Easternand Midland (Dublin), Noord-Holland (Amsterdam), UKI-London (London) und Stockholm. Zuerich bezieht sich auf das Gebiet des Kantons Zürich.
+
+# Daten
+
+## R Pakete laden
+
+
+
+```{r}
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+library(colorspace)
+library(knitr)
+devtools::install_github("statistikZH/statR")
+library(statR)
+```
+
+
+
+## Daten laden
+
+
+
+```{r}
+daten <- read_csv(here::here("daten/KTZH_00002423_00004863 (1).csv"))
+
+glimpse(daten)
+head(daten)
+str(daten)
+summary(daten)
+names(daten)
+colnames(daten)
+```
+
+
+
+## Daten transformieren
+
+
+
+```{r}
+daten <- daten |> mutate(Dublin = as.numeric(Dublin),
+                Stockholm = as.numeric(Stockholm),
+                London = as.numeric(London)
+)
+                
+daten_t<- pivot_longer(
+  data = daten,
+  cols = c(Zuerich, Median_aller_Regionen, Muenchen, Dublin, Amsterdam, London, Stockholm, Median_der_5_Vergleichsregionen),
+  cols_vary = "fastest",
+  names_to = "Stadt",
+  names_prefix = NULL,
+  names_sep = NULL,
+  names_pattern = NULL,
+  names_ptypes = NULL,
+  names_transform = NULL,
+  names_repair = "check_unique",
+  values_to = "Indexwert",
+  values_drop_na = FALSE,
+  values_ptypes = NULL,
+  values_transform = NULL
+)  
+  daten_t<- daten_t |> mutate(zuerich_binary = ifelse(Stadt == "Zuerich", TRUE, FALSE))
+ 
+```
+
+
+
+# Ergebnisse
+
+## 1. Visualisierung erstellen
+
+
+
+```{r}
+ #|fig-cap: "Abbildung 1"
+ #|#|label: fig-1
+
+
+median_lines_all <- daten_t |> 
+  filter(Stadt == "Median_aller_Regionen") |> 
+  select(Indikator, Indexwert)
+median_lines_5 <- daten_t|> 
+  filter(Stadt == "Median_der_5_Vergleichsregionen") |> 
+  select(Indikator, Indexwert)
+
+custom_labeller <- function(labels) {
+  labels <- as.character(labels)  # Ensure labels are character strings
+  labels[labels == "Anteil Bevölkerung beteiligt an lebenslangem Lernen"] <- "Anteil Bevölkerung beteiligt\n an lebenslangem Lernen"
+  labels[labels == "Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen"] <- "Anteil neue MINT Doktoratsabsolventen im\n Verhältnis zur Population aller 25- bis 34-Jährigen"
+  labels[labels == "Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung"] <- "Wissenschaftliche Co-Publikationen \nim Verhältnis zur Gesamtbevölkerung"
+  labels[labels == "BAK Taxation Index für hochqualifizierte Arbeitnehmende"] <- "BAK Taxation Index für\n hochqualifizierte Arbeitnehmende"  
+  labels[labels == "KMU mit Kooperationsaktivitäten im Bereich Innovation"] <-  "KMU mit Kooperations-\naktivitäten im Bereich Innovation" 
+  labels[labels =="Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen"]<-"Anteil Top Int. Wissenschaftliche \nPublikationen an allen Publikationen" 
+  labels[labels =="Wettbewerbsfähigkeit der Unternehmensbesteuerung"] <- "Wettbewerbsfähigkeit der\n Unternehmensbesteuerung"
+  labels[labels =="Anteil der Bevölkerung zwischen 15 und 64 Jahren"] <- "Anteil der Bevölkerung zwischen\n 15 und 64 Jahren"
+  return(labels)  # Return modified labels
+}
+
+
+daten_t |> 
+  filter(Stadt != "Median_aller_Regionen", Stadt != "Median_der_5_Vergleichsregionen") |> 
+  ggplot(aes(x = Indexwert, y = Stadt, fill = zuerich_binary)) +  
+  geom_boxplot(
+    aes(x = Indexwert, group = Indikator), 
+    width = 0.3, 
+    outlier.shape = NA, 
+    alpha = 0.2, 
+    fill = "lightblue"
+  )+
+  facet_wrap(. ~ Indikator, labeller = as_labeller(custom_labeller)) +
+  geom_vline(
+    data = median_lines_all, 
+    aes(xintercept = Indexwert, color = "All Regions Median"), 
+    linetype = "dashed"
+  ) +
+  geom_vline(
+    data = median_lines_5, 
+    aes(xintercept = Indexwert, color = "Top 5 Regions Median"), 
+    linetype = "dashed"
+  ) +
+  geom_segment(
+    data = daten_t, 
+    aes(x = Maximalwert, xend = Maximalwert, 
+        y = 2, 
+        yend = 5),
+    alpha = 0.25
+  )+
+  geom_segment(
+    data = daten_t, 
+    aes(x = Minimalwert, xend = Minimalwert, 
+        y = 2, 
+        yend = 5),
+    alpha = 0.25
+  )+
+  geom_point(shape = 21)+
+  scale_fill_manual(
+    name = "Zurich Data",  # Legend for fill
+    values = c("TRUE" = "green", "FALSE" = "gray")
+  ) +
+  scale_color_manual(
+    name = NULL,  # Legend for the lines
+    values = c("All Regions Median" = "red", "Top 5 Regions Median" = "blue")
+  ) +
+  theme_bw()+
+  theme(legend.position = "top",)+
+  labs(
+    title = "Städtevergleich",    
+    subtitle = "nach Indikatoren", 
+    caption = "Der Messzeitpunkt innerhalb der Indikatoren ist gleich (selbes Jahr), der Messzeitpunkt zwischen den Indikatoren stammt\n hingegen nicht aus einem spezifischen Jahr, je nach Indikator liegt der Messzeitpunkt zwischen den Jahren 2016 und 2023.", 
+  )
+
+
+```
+
+
+
+## 2. Visualisierung erstellen
+
+
+
+```{r}
+daten_t |> 
+  filter(Stadt != "Median_aller_Regionen", Stadt != "Median_der_5_Vergleichsregionen", Zuercher_Daten == "Ja") |>
+ggplot(aes(x = Indikator, y = Indexwert, color = Stadt, group = Stadt))+
+  geom_point()+
+  scale_color_discrete()+
+  scale_x_discrete()+
+  theme_minimal()+
+  coord_flip()+
+     theme(
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(
+      angle = 90, 
+      hjust = 1, 
+      vjust = 1,
+      margin = margin(t = 0, r = 0, b = 0, l = 0)),
+    plot.margin = margin(t = 5, r = 5, b = 5, l = 5, unit = "pt"))+
+  theme_stat()+
+  scale_fill_manual(values=zhpal$zhcd)
+  
+```
+
+
+
+## 3. Visualisierung erstellen
+
+
+
+```{r}
+plot_daten <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Zuerich", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Zuerich - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+
+print(plot_daten)
+  
+  ggplot(plot_daten, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[1:2]) +
+  labs(title = "Differenz zwischen Zürich und dem Median der 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        legend.position = "none")
+```
+
+```{r}
+plot_daten2 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Muenchen", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Muenchen - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+
+print(plot_daten)
+  
+  ggplot(plot_daten2, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[3:4]) +
+  labs(title = "Differenz zwischen München und dem Median der 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        legend.position = "none")
+```
+
+```{r}
+plot_daten3 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Dublin", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Dublin - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+
+print(plot_daten)
+  
+  ggplot(plot_daten3, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[5:6]) +
+  labs(title = "Differenz zwischen Dublin und dem Median der 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        legend.position = "none")
+```
+
+```{r}
+plot_daten4 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Stockholm", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Stockholm - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+
+print(plot_daten)
+  
+  ggplot(plot_daten4, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[7:8]) +
+  labs(title = "Differenz zwischen Stockholm und dem Median der 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        legend.position = "none")
+```
+
+```{r}
+plot_daten5 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Amsterdam", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Amsterdam - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+
+print(plot_daten)
+  
+  ggplot(plot_daten5, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  geom_col() +
+  coord_flip() +
+  theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[9:10]) +
+  labs(title = "Differenz zwischen Amsterdam und dem Median der 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        legend.position = "none")
+```
+
+
+
+## Tabelle erstellen
+
+
+
+```{r}
+tabelle <- daten_t |>
+  group_by(Indikator) |>
+  summarise(    
+    Mittelwert = mean(Indexwert, na.rm = TRUE),
+    Median = median(Indexwert, na.rm = TRUE),
+    Standardabweichung = sd(Indexwert, na.rm = TRUE)
+  ) |>
+  arrange(desc(Standardabweichung))
+
+tabelle |>
+  kable(caption = "Mittelwerte, Mediane und Standardabweichungen nach Indikator")
+```
+
+
+
+# Schlussfolgerungen
+
+siehe \[\@fig-1\]
+

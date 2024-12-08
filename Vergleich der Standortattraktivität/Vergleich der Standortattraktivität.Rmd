@@ -1,0 +1,380 @@
+---
+title: Vergleich der Standortattraktivität des Kantons Zürich mit 5 Vergleichsregionen
+  in Europa
+author: "Jana Kobler"
+date: "10.12.2024"
+output:
+  bookdown::html_document2:
+    css: style.css
+    number_sections: true
+    template: zhtemplate.html
+    toc: true
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Einleitung
+
+Für das Abschlussprojekt des Kurses Rstats-K009 konnten aus Gründen des Datenschutzes und der Verfügbarkeit kein Datensatz aus dem Arbeitsalltag der Autorin verwendet werden. Stattdessen wurde der Datensatz Vergleich der Standortattraktivität des Kantons Zürich mit europäschen Regionen aus dem öffentlich zugänaglichen Datenkatalog (open government data) des statistischen Amts des Kantons Zürich verwendet. Die Daten stammen vom Amt für Wirtschaft des Kantons Zürich und wurden am 18.12.2024 publiziert.
+
+# Daten
+
+Die Indikatoren in diesem Datensatz vergleichen die Attraktivität des Wirtschaftsstandorts Kanton Zürich mit der von München, Stockholm, Amsterdam, Dublin und London. Sie bilden Grundlage der "Vergleichsanalyse Standortattraktivität". Die Indikatoren bilden verschiedene Standortfaktoren ab, die einzelnen Werte bildet die Fachstelle Volkswirtschaft des Amts für Wirtschaft auf Basis von Daten der OECD, der EU und verschiedener think tanks.
+
+Die Vergleichsregionen umfassen jeweils die entsprechende NUTS-2 Region. Entsprechend werden folgende Regionen verglichen: Oberbayern (Muenchen), Easternand Midland (Dublin), Noord-Holland (Amsterdam), UKI-London (London) und Stockholm. Zuerich bezieht sich auf das Gebiet des Kantons Zürich.
+
+## R Pakete laden
+
+```{r message=FALSE, warning=FALSE}
+library(readr) 
+library(dplyr) 
+library(ggplot2) 
+library(tidyverse) 
+library(colorspace) 
+library(knitr) 
+devtools::install_github("statistikZH/statR") 
+library(statR) 
+library(kableExtra)
+library(bookdown)
+```
+
+## Daten laden
+
+```{r message=FALSE, warning=FALSE}
+daten <- read_csv(here::here("Vergleich der Standortattraktivität/data/raw/KTZH_00002423_00004863 (1).csv"))
+```
+
+## Daten transformieren
+
+```{r message=FALSE, warning=FALSE}
+daten <- daten |> 
+  mutate(Dublin = as.numeric(Dublin),                 
+         Stockholm = as.numeric(Stockholm),                 
+         London = as.numeric(London) )                  
+
+daten_t<- pivot_longer(   
+  data = daten,   
+  cols = c(Zuerich, Median_aller_Regionen, Muenchen, Dublin, Amsterdam, London, Stockholm, Median_der_5_Vergleichsregionen),   
+  cols_vary = "fastest",   
+  names_to = "Stadt",  
+  names_prefix = NULL,   
+  names_sep = NULL,   
+  names_pattern = NULL,   
+  names_ptypes = NULL,  
+  names_transform = NULL,  
+  names_repair = "check_unique",   
+  values_to = "Indexwert",   
+  values_drop_na = FALSE,   
+  values_ptypes = NULL,  
+  values_transform = NULL 
+  )     
+daten_t<- daten_t |> mutate(zuerich_binary = ifelse(Stadt == "Zuerich", TRUE, FALSE))
+
+
+
+
+```
+
+# Ergebnisse
+
+## 1. Visualisierung erstellen
+
+```{r message=FALSE, warning=FALSE}
+
+median_lines_all <- daten_t |> 
+  filter(Stadt == "Median_aller_Regionen") |> 
+  select(Indikator, Indexwert)
+median_lines_5 <- daten_t|> 
+  filter(Stadt == "Median_der_5_Vergleichsregionen") |> 
+  select(Indikator, Indexwert)
+
+custom_labeller <- function(labels) {
+  labels <- as.character(labels)  # Ensure labels are character strings
+  labels[labels == "Anteil Bevölkerung beteiligt an lebenslangem Lernen"] <- "Anteil Bevölkerung beteiligt\n an lebenslangem Lernen"
+  labels[labels == "Anteil neue MINT Doktoratsabsolventen im Verhältnis zur Population aller 25- bis 34-Jährigen"] <- "Anteil neue MINT Doktoratsabsolventen im\n Verhältnis zur Population aller 25- bis 34-Jährigen"
+  labels[labels == "Wissenschaftliche Co-Publikationen im Verhältnis zur Gesamtbevölkerung"] <- "Wissenschaftliche Co-Publikationen \nim Verhältnis zur Gesamtbevölkerung"
+  labels[labels == "BAK Taxation Index für hochqualifizierte Arbeitnehmende"] <- "BAK Taxation Index für\n hochqualifizierte Arbeitnehmende"  
+  labels[labels == "KMU mit Kooperationsaktivitäten im Bereich Innovation"] <-  "KMU mit Kooperations-\naktivitäten im Bereich Innovation" 
+  labels[labels =="Anteil Top Int. Wissenschaftliche Publikationen an allen Publikationen"]<-"Anteil Top Int. Wissenschaftliche \nPublikationen an allen Publikationen" 
+  labels[labels =="Wettbewerbsfähigkeit der Unternehmensbesteuerung"] <- "Wettbewerbsfähigkeit der\n Unternehmensbesteuerung"
+  labels[labels =="Anteil der Bevölkerung zwischen 15 und 64 Jahren"] <- "Anteil der Bevölkerung zwischen\n 15 und 64 Jahren"
+  return(labels)  # Return modified labels
+}
+```
+
+```{r fig-2, message=FALSE, warning=FALSE, fig.cap="Vergleich 1", fig.width=18.5, fig.height=12}
+
+daten_t |> 
+  filter(Stadt != "Median_aller_Regionen", Stadt != "Median_der_5_Vergleichsregionen") |> 
+  ggplot(aes(x = Indexwert, y = Stadt, fill = zuerich_binary)) +  
+  geom_boxplot(
+    aes(x = Indexwert, group = Indikator), 
+    width = 0.3, 
+    outlier.shape = NA, 
+    alpha = 0.2, 
+    fill = "lightblue"
+  )+
+  facet_wrap(. ~ Indikator, labeller = as_labeller(custom_labeller)) +
+  geom_vline(
+    data = median_lines_all, 
+    aes(xintercept = Indexwert, color = "All Regions Median"), 
+    linetype = "dashed"
+  ) +
+  geom_vline(
+    data = median_lines_5, 
+    aes(xintercept = Indexwert, color = "Top 5 Regions Median"), 
+    linetype = "dashed"
+  ) +
+  geom_segment(
+    data = daten_t, 
+    aes(x = Maximalwert, xend = Maximalwert, 
+        y = 2, 
+        yend = 5),
+    alpha = 0.25
+  )+
+  geom_segment(
+    data = daten_t, 
+    aes(x = Minimalwert, xend = Minimalwert, 
+        y = 2, 
+        yend = 5),
+    alpha = 0.25
+  )+
+  geom_point(shape = 21)+
+  scale_fill_manual(
+    name = "Zurich Data",  # Legend for fill
+    values = c("TRUE" = "green", "FALSE" = "gray")
+  ) +
+  scale_color_manual(
+    name = NULL,  # Legend for the lines
+    values = c("All Regions Median" = "red", "Top 5 Regions Median" = "blue")
+  ) +
+  theme_bw(base_size = 14)+
+  theme(legend.position = "top",
+        strip.text = element_text(size = 8) ,)+
+  labs(
+    title = "Regionenvergleich",    
+    subtitle = "nach Indikatoren", 
+    caption = "Der Messzeitpunkt innerhalb der Indikatoren ist gleich (selbes Jahr), der Messzeitpunkt zwischen den Indikatoren stammt\n hingegen nicht aus einem spezifischen Jahr, je nach Indikator liegt der Messzeitpunkt zwischen den Jahren 2016 und 2023.", 
+  )
+
+
+```
+
+\@ref(fig:fig-2) zeigt einen umfassenden Vergleich verschiedener Indikatoren für die Regionen Amsterdam, London, Stockholm, Dublin, München und Zürich, wobei Zürich besonders hervorgehoben wird. Jeder Indikator wird in einem separaten Plot dargestellt, was einen detaillierten Vergleich zwischen den Städten ermöglicht. Die Boxplots repräsentieren die Verteilung der Indexwerte für jede Region, während die vertikalen Linien die Medianwerte aller Regionen und der Top 5 Regionen anzeigen. Zürichs wird durch grüne Punkte hervorgehoben, was einen schnellen Vergleich zu anderen Städten erlaubt. Die Visualisierung ermöglicht es, die Stärken und Schwächen des Kantons Zürich im Standortvergleich mit anderen Regionen abzulesen.
+
+## 2. Visualisierung erstellen
+
+```{r fig-3, message=FALSE, warning=FALSE, fig.cap="Vergleich 1", fig.width=12, fig.height=10}
+
+
+daten_t |> 
+  filter(Stadt != "Median_aller_Regionen", Stadt != "Median_der_5_Vergleichsregionen", Zuercher_Daten == "Ja") |>
+ggplot(aes(x = Indikator, y = Indexwert, color = Stadt, group = Stadt))+
+  geom_point()+
+   theme_stat()+
+  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 10))+
+  scale_fill_manual(values=zhpal$zhcd)+
+  scale_color_discrete()+
+  scale_x_discrete()+
+  coord_flip()+
+     theme(
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(
+      angle = 90, 
+      hjust = 1, 
+      vjust = 1,
+      margin = margin(t = 0, r = 0, b = 0, l = 0)),
+    plot.margin = margin(t = 5, r = 5, b = 5, l = 5, unit = "pt"))
+```
+
+Die Darstellung \@ref(fig:fig-3) zeigt die Indexwere der im Datensatz vorhandenen Regionen pro Indikator. Es lässt sich beispielweise ablesen, dass alle betrachteten Regionen hohe Indexwerte bei der Erwerbstätigenquote, Anteil ICT-Fachkräften an Gesamtbeschäftigung, BAK Erreichbarkeit global und Kontinental aufweisen. Ebenfalls weisen gleichzeitig zu einem hohen Indexwert bei der Erwerbstätigenquote ein hoher Wert bei der Erwerblosenquote auf, was darauf schliessen lässt, dass eine tiefe Erwerbstätigenquote zu einem hohen Indexwert führt. Beim Idexwert Fortune 500-Unternehmen pro Kopf fällt auf, dass die Region Zürich einen deutlich höheren Indexwert aufweist als die anderen Regionen.
+
+## 3. Visualisierung erstellen
+
+Die folgenden Visualisierugen zeigen die Differenz der Indexwerte der Regionen zum Median der 5 Vergleichsregionen und zeigen somit auf, in welchen Indikatoren die entsprechende Region besser abschneidet als der Median der Vergleichsregionen.
+
+```{r fig-4, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median Zürich", fig.width=8, fig.height=10}
+
+plot_daten <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Zuerich", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Zuerich - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+     scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[1:2]) +
+  labs(title = "Differenz zwischen Zürich\nund dem Median der 5\nVergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+Wie bereits in der Beschreibung von \@ref(fig:fig-3) erwähnt, schneidet die Region Zürich beim Indikator Fortune 500-Unternehmen pro Kopf mit einer positiven Differenz von 70 im Vergleich zum Median der Vergleichregionen ausserordentlich gut ab. Mit einer Abweichung von -30 zum Median ist der Indikator E-Government-Reifegrad Zürichs schlechtester Idikator. Weiter zeigt \@ref(fig:fig-4), dass die Region Zürich überwiegend positive Differenzen zum Median aufweist.
+
+```{r fig-5, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median München", fig.width=8, fig.height=10}
+
+
+plot_daten2 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Muenchen", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Muenchen - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten2, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+ scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[3:4]) +
+  labs(title = "Differenz zwischen\nMünchen und dem Median\nder 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+ theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+\@ref(fig:fig-5) stellt analog \@ref(fig:fig-4) die Abweichungen zum Median der Indexwerte für die Region München dar. Bei den Indikatoren Anteil private F&E Audgaben am BIP und Patentanmeldungen im Verhältnis zum BIP weist die Region München eine grosse positive Differenz auf. Beim Index BAK Taxation Index für Unternehmen eine hohe negative Differenz. Im Vergleich zur Region Zürich fällt auf, dass mehr Indikatoren keine Differenz zum Median aufweisen, das heisst, dass die Region München mit mehr Indikatoren als Zürich dem Medianwert entspricht.
+
+```{r fig-6, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median Dublin", fig.width=8, fig.height=10}
+
+plot_daten3 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Dublin", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Dublin - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten3, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[5:6]) +
+  labs(title = "Differenz zwischen Dublin\nund dem Median der\n5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+  theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+Die Abweichungen zum Median der Vergleichsregionen der Region Dublin werden in \@ref(fig:fig-6) visualisiert. Die Region Dublin hat hohe Abweichungen zum Median der Vergleichsregionen be den Indikatoren Arbeitsproduktivität, BIP pro Kopf und MINT Abschlüsse pro Einwohner. Bei den Idikatoren Anteil öffentliche F&E Ausgaben sowie Trademark Anmeldungen im Verhältnis zum BIP weist die Region Dublin mit -30 eine grössere Abweichung der Indexwerte zum Median der Vergleichsregionen auf. Weiter zeigt die Darstellung mehr negative Abweichungen zum Median als positive.
+
+```{r fig-7, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median Stockholm", fig.width=8, fig.height=10}
+
+plot_daten4 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Stockholm", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Stockholm - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten4, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+   theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[7:8]) +
+  labs(title = "Differenz zwischen\nStockholm und dem Median\nder 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+\@ref(fig:fig-7) visualisert analog der bereits beschriebenen Darstellungen die Abweichungen der Indexwerte von Stockholm zum Median der Vergleichsregionen. Bei der Betrachtung des Anteils private F&E Ausgaben am BIP weist Stockholm eine hohe positive Differenz zum Median auf, bei der Arbeitsmarktregulierung eine hohe negative Abweichung.
+
+```{r fig-8, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median Amsterdam", fig.width=8, fig.height=10}
+
+plot_daten5 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("Amsterdam", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = Amsterdam - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten5, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+  theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[9:10]) +
+  labs(title = "Differenz zwischen\nAmsterdam und dem Median\nder 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+Bei der Betrachtung der Differenzen zum Median der Region Amsterdam \@ref(fig:fig-8) wird deutlich, dass Amsterdam einerseits viele Werte ohne Abweichungen aufweist, d.h. viele Indexwerte dem Median entsprechen, andererseits sind die meisten Abweichungen eher klein und deuten darauf hin, dass Amsterdam weder herausragend positive noch negative Indikatoren aufweist.
+
+```{r fig-9, message=FALSE, warning=FALSE, fig.cap="Abweichungen vom Median Amsterdam", fig.width=8, fig.height=10}
+
+plot_daten6 <-daten_t |>
+  select(-zuerich_binary) |>
+  filter(Stadt %in% c("London", "Median_der_5_Vergleichsregionen")) |>
+  pivot_wider(names_from = Stadt, values_from = Indexwert) |>
+  mutate(Difference = London - Median_der_5_Vergleichsregionen) |>
+  arrange(desc(Difference))
+  
+  ggplot(plot_daten6, aes(x = reorder(Indikator, Difference), y = Difference, fill = Difference > 0)) +
+  scale_y_continuous(limits = c(-50, 100), breaks = seq(-50, 100, by = 20))+
+  geom_col() +
+  coord_flip() +
+  theme_stat()+
+  scale_fill_manual(values=zhpal$zhwebdataviz[11:12]) +
+  labs(title = "Differenz zwischen\nLondon und dem Median\nder 5 Vergleichsregionen",
+       x = "Indikator",
+       y = "Differenz zum Median") +
+theme(axis.text.y = element_text(size = 8),
+        axis.text.x = element_text(size = 6),
+        legend.position = "none")
+```
+
+Abbildung \@ref(fig:fig-9) zeigt die Abweichungen der Indexwerte Londons vom Median der 5 Vergleichsregionen für verschiedene Indikatoren. London weist bei einigen Indikatoren deutliche Stärken auf, insbesondere bei wissenschaftlichen Publikationen und der Attraktivität für internationale Talente, wo die Stadt signifikant über dem Median liegt. Gleichzeitig zeigt London bei Indikatoren wie dem Taxation Index für Unternehmen und der Arbeitsmarktregulierung negative Abweichungen, was auf Herausforderungen in diesen Bereichen hindeutet.
+
+## Tabelle erstellen
+
+```{r tbl-1, message=FALSE, warning=FALSE, tbl.cap="Mittelwerte, Mediane und Standardabweichung nach Indikator" }
+  
+tabelle <- daten_t |>   
+  group_by(Indikator) |>   
+  summarise(         
+    Mittelwert = mean(Indexwert, na.rm = TRUE),     
+    Median = median(Indexwert, na.rm = TRUE),     
+    Standardabweichung = sd(Indexwert, na.rm = TRUE)  
+    ) |>   arrange(desc(Standardabweichung))  
+tabelle |>   
+  kable(caption = "Mittelwerte, Mediane und Standardabweichungen nach Indikator", 
+        digits = 2,
+        col.names = c("Indikator", "Mittelwert", "Median", "Standardabweichung"),   
+        align = c("l", "c", "c", "c")) |>   
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), 
+                full_width = FALSE) |>   
+  column_spec(1, bold = TRUE) |>   
+  add_header_above(c(" " = 1, "Statistiken" = 3)) |>   
+  row_spec(0, bold = TRUE, color = "white", background = "#4E79A7") 
+```
+
+Tabelle \@ref(tab:tbl-1) zeigt Mittelwerte, Mediane und Standardabweichungen für verschiedene Indikatoren der Standortattraktivität, sortiert nach absteigender Standardabweichung. Diese Anordnung ermöglicht es, die Indikatoren mit der grössten Variabilität zwischen den verglichenen Regionen schnell zu identifizieren. Indikatoren mit hoher Standardabweichung weisen auf Bereiche hin, in denen die grössten Unterschiede zwischen den Regionen bestehen, während niedrige Standardabweichungen auf ähnlichere Werte über alle Regionen hinweg hindeuten. Der Vergleich von Mittelwert und Median für jeden Indikator gibt Aufschluss über die Verteilung der Werte und mögliche Ausreisser in den Daten.
+
+# Schlussfolgerungen
+
+Die oben stehenden Abbildungen und Analysen lassen hinsichtlich Standortattraktivität der untersuchten Wirtschtaftsregionen zahlreiche Schlussfolgerungen zu. Für die Standortattraktivität des Kanton Zürich kann folgendes festgehalten werden:
+
+Zürich zeigt eine herausragende Leistung beim Indikator "Fortune 500-Unternehmen pro Kopf", mit einer positiven Differenz von 70 zum Median der Vergleichsregionen. Dies deutet auf eine hohe Attraktivität für grosse, international bedeutende Unternehmen hin. Die hohe Standardabweichung bei diesem Indikator weist auf eine hohe Varianz hin, was die starke Position des Kantons Zürich noch weiter unterstreicht. Der Kanton weist überdies grössentteils positive Abweichungen vom Median der Vergleichsregionen auf, was auf eine starke Position innerhalb der betrachteten Regionen hindeutet. Beim Indikator E-Government-Reifegrad schneidet Zürich mit -30 Differenz zum Median am schwächsten ab, dies liefert einen Hinweis auf Verbesserungspotentional, falls die Standortattraktivität weiter gesteigert werden soll. Zu beachten ist in diesem Zusammenhang die in Vergleich etwas tiefere Standardabweichung dieses Indikators. Die Werte der untersuchten Regionen weisen daher keine grossen Varianz auf und liegen daher nahe bei einander. Zusammenfassend ist Zürich ein profilierter und attraktiver Wirtschaftsstandort in Europa.
