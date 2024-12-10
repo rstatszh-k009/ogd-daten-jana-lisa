@@ -2,7 +2,7 @@
 
 [Datengrundlage](https://www.zh.ch/de/politik-staat/statistik-daten/datenkatalog.html#/datasets/2423@awi-kanton-zuerich)  
 
-([Webseite Projekt](https://rstatszh-k009.github.io/ogd-daten-jana-lisa/))
+[Webseite Projekt](https://rstatszh-k009.github.io/ogd-daten-jana-lisa/)
 
 ## Projektbeschreibung
 
