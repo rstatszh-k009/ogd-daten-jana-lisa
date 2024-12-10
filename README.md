@@ -1,8 +1,8 @@
 # Abschlussprojekt rstatsZH
 
-[Vergleich der Standortattraktivität des Kantons Zürich mit europäischen Regionen](https://www.zh.ch/de/politik-staat/statistik-daten/datenkatalog.html#/datasets/2423@awi-kanton-zuerich)  
+[Datengrundlage](https://www.zh.ch/de/politik-staat/statistik-daten/datenkatalog.html#/datasets/2423@awi-kanton-zuerich)  
 
-([https://github.com/rstatszh-k009/projekt-rainbow-train/blob/master/docs/index.qmd](https://rstatszh-k009.github.io/ogd-daten-jana-lisa/))
+([Webseite Projekt](https://rstatszh-k009.github.io/ogd-daten-jana-lisa/))
 
 ## Projektbeschreibung
 
