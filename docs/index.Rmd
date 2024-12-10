@@ -45,7 +45,7 @@ library(bookdown)
 ## Daten laden
 
 ```{r message=FALSE, warning=FALSE}
-daten <- read_csv(here::here("Vergleich der Standortattraktivität/data/raw/KTZH_00002423_00004863 (1).csv"))
+daten <- read_csv(here::here("docs/data/raw/KTZH_00002423_00004863 (1).csv"))
 ```
 
 ## Daten transformieren
