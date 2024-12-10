@@ -28,7 +28,7 @@ Vielen Dank an folgende Personen die mitgewirkt haben:
 
 [@larnsce](https://github.com/larnsce), danke für den lehrreichen Kurs, von dem ich viel mitnehmen werde!
 
-[@qwertzlbry](https://github.com/qwertzlbry), danke für die inspiration und die Hilfestellungen beim erstellen des ersten Plots!
+[@qwertzlbry](https://github.com/qwertzlbry), danke für die Inspiration und die Hilfestellungen beim Erstellen des ersten Plots!
 
 ## Kontakt
 
